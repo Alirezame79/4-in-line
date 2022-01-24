@@ -42,24 +42,23 @@ public class Main {
     public static void gameControl(){
 
         while (true) {
-            System.out.println("GameTurn" + ScoreBoard.gameTurn);
-            if (ScoreBoard.gameTurn % 2 == 0) {          // --> User turn
+//            System.out.println("GameTurn" + ScoreBoard.gameTurn);
+            if (ScoreBoard.gameTurn % 2 == 0) {                             // --> User turn
                 System.out.println("User turn ->");
+
                 ScoreBoard.gameTurn++;
                 printDemoGround();
                 userChoose();
 
-                if (refereeCheck()) newRound();
-
-            } else {                                     // --> Computer turn
+            } else {                                                        // --> Computer turn
                 System.out.println("Computer turn ->");
 
                 AI ai = new AI();
                 if (!GameGround.performStep(ai.drawSituations(), COMPUTER)) continue;
                 ScoreBoard.gameTurn++;
 
-                if (refereeCheck()) newRound();
             }
+            if (refereeCheck()) newRound();
         }
     }
 

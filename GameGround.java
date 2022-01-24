@@ -22,7 +22,8 @@ public class GameGround {
                 if (stepMan.equals("User")) gameGround[i][column-1] = 2;
                 if (stepMan.equals("Computer")) gameGround[i][column-1] = 1;
 //                System.out.println("print " + (column) + i + stepMan);
-                printGameGround();
+//                printGameGround();
+                System.out.println(stepMan + " Place on " + column);
                 return true;
             }
         }
